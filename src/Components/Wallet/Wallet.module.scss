@@ -1,0 +1,40 @@
+.Wallet {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgb(12, 12, 12);
+    background: rgb(130, 127, 127);
+    margin-left: 50px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px 10px;
+
+    .Wallet_title {
+        text-align: center;
+        h1 {
+            color: #e1e1e1;
+        }
+    }
+
+    .Wallet_bill {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+        button {
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: orange;
+        }
+
+        button:active {
+            background-color: white;
+        }
+    }
+}

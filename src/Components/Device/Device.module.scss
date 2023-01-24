@@ -1,0 +1,160 @@
+.Device {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 660px;
+  height: 700px;
+  background: #455d75;
+  border-radius: 5px;
+ border: 2px solid black;
+  .Device_table {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-height: 700px;
+
+    .Device__shop {
+      display: grid;
+      text-align: center;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 145px);
+      width: 400px;
+      height: 500px;
+      border-radius: 5px;
+      background: #d6d9dc;
+      padding: 10px;
+
+      .Device__shop_item {
+        border-bottom: 1px solid black;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        cursor: pointer;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+        .amount {
+          width: 30px;
+          height: 30px;
+          border: 1px solid #253a4c;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
+          border-radius: 50%;
+        }
+        .product {
+          margin-bottom: 5px;
+        }
+      }
+
+      .Device__shop_item:hover {
+        .amount {
+          background-color: orange;
+        }
+      }
+
+      .Device__shop_item:active {
+        .amount {
+          background-color: transparent;
+        }
+      }
+    }
+    .Device__terminal {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 180px;
+      height: 500px;
+
+      .Device__terminal_score {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 160px;
+        height: 180px;
+        border-radius: 5px;
+        background: #e6e9ed;
+        margin-left: 5px;
+        padding-left: 15px;
+
+        p {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        margin-bottom: 20px;
+      }
+
+      .Device__terminal_input {
+        input {
+          width: 160px;
+          height: 30px;
+          padding: 5px;
+          border-radius: 5px;
+        }
+        margin-bottom: 20px;
+      }
+
+      .Device__terminal_title {
+        width: 145px;
+        text-align: center;
+        h2 {
+          color: #253a4c;
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+      }
+
+      .Device__terminal_buttons {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+        button {
+          width: 70px;
+          height: 30px;
+          margin-right: 5px;
+          margin-bottom: 10px;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: orange;
+        }
+        button:active {
+          background-color: white;
+        }
+      }
+      .Device__terminal_receiver {
+        width: 145px;
+        height: 20px;
+        border: 3px solid #ee5858;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .slot {
+          width: 89%;
+          height: 5px;
+          background: #fdbbbb;
+        }
+      }
+    }
+  }
+  .Device_push {
+    text-align: center;
+    width: 400px;
+    border: 3px solid #253a4c;
+    margin-bottom: 30px;
+    background-repeat: 5px;
+
+    h2 {
+      color: #2f4960;
+    }
+  }
+}
