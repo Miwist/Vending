@@ -1,5 +1,3 @@
-
-
 .Device {
   display: flex;
   flex-direction: column;
@@ -114,6 +112,7 @@
       width: 180px;
       height: 500px;
       margin-left: 10px;
+      margin-bottom: 30px;
 
       .Device__terminal_score {
         display: flex;
@@ -144,7 +143,7 @@
       .thing {
         width: 120px;
         height: 30px;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.85);
         border: 1px solid rgba(0, 0, 0, 0.15);
         border-radius: 5px;
         display: flex;
@@ -195,12 +194,11 @@
       .Device__terminal_buttons {
         display: flex;
         flex-direction: row;
-
+        margin-bottom: 10px;
         button {
           width: 70px;
           height: 40px;
           margin-right: 5px;
-          margin-bottom: 10px;
           color: #ffffff;
           cursor: pointer;
           background: #3454fb;
@@ -221,7 +219,7 @@
       }
       .Device__terminal_receiver {
         width: 100%;
-        height: 200px;
+        max-height: 200px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -256,10 +254,9 @@
   }
   .Device_push {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 80%;
     height: 50px;
     border: 1px solid black;
     margin-bottom: 30px;
@@ -268,26 +265,6 @@
     h2 {
       font-size: 22px;
       color: #1d2747;
-    }
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .Device {
-    width: 320px;
-    height: 380px;
-
-    .Device_table {
-      .Device__shop {
-        width: 260px;
-        height: 300px;
-        .Device__shop_item {
-          img {
-            width: 20px;
-            height: 20px;
-          }
-        }
-      }
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import cl from "./Bag.module.scss";
 
-const Bag = ({ thing }) => {
+const Bag = ({ thing, setOpenBag }) => {
   return (
     <div className={cl.Bag}>
       <h1>Ваша сумка</h1>
@@ -17,6 +17,7 @@ const Bag = ({ thing }) => {
       ) : (
         <p>Пока ничего нет</p>
       )}
+      <button type="button" onClick={() => setOpenBag(false)}>Закрыть</button>
     </div>
   );
 };

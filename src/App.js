@@ -9,7 +9,6 @@ function App() {
   const [balance, setBalance] = useState(0);
   const [walletBalance, setWalletBalance] = useState(2500);
   const [thing, setThing] = useState([]);
- 
 
   return (
     <div className="wrapper">
@@ -20,16 +19,13 @@ function App() {
         setThing={setThing}
         thing={thing}
       />
-      <Menu />
-      <div className="column">
-        <Wallet
-          walletBalance={walletBalance}
-          setWalletBalance={setWalletBalance}
-          setBalance={setBalance}
-       
-        />
-        <Bag thing={thing} />
-      </div>
+      <Menu
+        walletBalance={walletBalance}
+        setBalance={setBalance}
+        setWalletBalance={setWalletBalance}
+        setThing={setThing}
+        thing={thing}
+      />
     </div>
   );
 }

@@ -6,7 +6,7 @@ const Wallet = ({
   walletBalance,
   setWalletBalance,
   setBalance,
-  setOpenModal,
+  setOpenWallet,
 }) => {
   function setMoney(bill) {
     if (walletBalance >= bill) {
@@ -39,6 +39,9 @@ const Wallet = ({
           1000 ₽
         </button>
       </div>
+      <button type="button" onClick={() => setOpenWallet(false)}>
+          Закрыть
+        </button>
     </div>
   );
 };
