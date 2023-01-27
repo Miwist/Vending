@@ -1,46 +1,58 @@
+
+
 .Device {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 660px;
-  height: 700px;
-  background: #455d75;
+  max-width: 640px;
+  max-height: 700px;
+  background: linear-gradient(359.26deg, #06123a -78.42%, #acacac 147.26%);
   border-radius: 5px;
- border: 2px solid black;
+  margin: 10px;
+
   .Device_table {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin: 10px;
     max-height: 700px;
-
+    p {
+      font-size: 14px;
+    }
     .Device__shop {
+      position: relative; // Это важно добавить
+      overflow-x: hidden;
       display: grid;
       text-align: center;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(3, 145px);
-      width: 400px;
-      height: 500px;
+      gap: 1rem;
+      max-width: 400px;
+      max-height: 500px;
       border-radius: 5px;
       background: #d6d9dc;
       padding: 10px;
 
       .Device__shop_item {
-        border-bottom: 1px solid black;
         margin-bottom: 10px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
+        background: rgba(20, 20, 20, 0.2);
+        border-radius: 7px;
         cursor: pointer;
+        padding: 5px;
+
         img {
           width: 60px;
           height: 60px;
         }
         .amount {
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
           border: 1px solid #253a4c;
           display: flex;
           align-items: center;
@@ -55,13 +67,42 @@
 
       .Device__shop_item:hover {
         .amount {
-          background-color: orange;
+          background-color: #4dc1e8cf;
         }
+        background: rgba(28, 34, 55, 0.9);
+        box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.1);
+        color: white;
       }
 
       .Device__shop_item:active {
         .amount {
           background-color: transparent;
+        }
+      }
+
+      .flare {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 45px;
+        transform: skewX(-45deg);
+        animation: flareAnimation;
+        left: -150%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.4)
+        );
+        animation: flareAnimation 4s infinite linear;
+        z-index: 5;
+      }
+
+      @keyframes flareAnimation {
+        0% {
+          left: -150%;
+        }
+        100% {
+          left: 150%;
         }
       }
     }
@@ -72,89 +113,181 @@
       align-items: center;
       width: 180px;
       height: 500px;
+      margin-left: 10px;
 
       .Device__terminal_score {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        width: 160px;
-        height: 180px;
+        width: 180px;
+        height: 250px;
         border-radius: 5px;
         background: #e6e9ed;
-        margin-left: 5px;
-        padding-left: 15px;
+        margin: 7px;
+        padding: 15px;
 
         p {
-          font-size: 14px;
+          font-size: 16px;
           margin-bottom: 10px;
+          color: #828399;
+        }
+        b {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          color: #1d2747;
         }
         margin-bottom: 20px;
       }
 
-      .Device__terminal_input {
-        input {
-          width: 160px;
-          height: 30px;
-          padding: 5px;
-          border-radius: 5px;
+      .thing {
+        width: 120px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 5px;
+        img {
+          width: 24px;
+          height: 24px;
         }
-        margin-bottom: 20px;
+        p {
+          font-size: 12px;
+          margin-bottom: 0;
+          margin-left: 5px;
+        }
+      }
+
+      .valid {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 120px;
+        height: 30px;
+        border-radius: 5px;
+
+        .square {
+          width: 18px;
+          height: 18px;
+          text-align: center;
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 4px;
+        }
+        p {
+          font-size: 12px;
+          color: rgba(0, 121, 85, 0.6);
+          margin-bottom: 0;
+        }
       }
 
       .Device__terminal_title {
         width: 145px;
         text-align: center;
-        h2 {
-          color: #253a4c;
-          font-size: 16px;
-          margin-bottom: 10px;
-        }
       }
 
       .Device__terminal_buttons {
         display: flex;
         flex-direction: row;
-        margin-bottom: 20px;
+
         button {
           width: 70px;
-          height: 30px;
+          height: 40px;
           margin-right: 5px;
           margin-bottom: 10px;
+          color: #ffffff;
           cursor: pointer;
+          background: #3454fb;
+          border-radius: 4px;
+          filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.1));
         }
         button:hover {
-          background-color: orange;
+          background: white;
+          color: black;
         }
         button:active {
-          background-color: white;
+          border: 1px solid black;
+        }
+
+        .change {
+          background: #2f2d2f;
         }
       }
       .Device__terminal_receiver {
-        width: 145px;
-        height: 20px;
-        border: 3px solid #ee5858;
+        width: 100%;
+        height: 200px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        .slot {
-          width: 89%;
-          height: 5px;
-          background: #fdbbbb;
+        p {
+          color: #253a4c;
+          margin-bottom: 10px;
+        }
+        .slotBorder {
+          width: 145px;
+          height: 20px;
+          border: 3px solid #ee5858;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .slot {
+            width: 89%;
+            height: 5px;
+            background: #fdbbbb;
+          }
+        }
+
+        .grap {
+          img {
+            width: 50px;
+            height: 50px;
+          }
         }
       }
     }
   }
   .Device_push {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 400px;
-    border: 3px solid #253a4c;
+    height: 50px;
+    border: 1px solid black;
     margin-bottom: 30px;
-    background-repeat: 5px;
-
+    background: #d9d9d9;
+    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.5));
     h2 {
-      color: #2f4960;
+      font-size: 22px;
+      color: #1d2747;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .Device {
+    width: 320px;
+    height: 380px;
+
+    .Device_table {
+      .Device__shop {
+        width: 260px;
+        height: 300px;
+        .Device__shop_item {
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
     }
   }
 }

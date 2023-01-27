@@ -1,21 +1,46 @@
-import React, { useState } from 'react'
-import cl from "./Wallet.module.scss"
-import money from "../../assets/icons/bill.png"
+import React from "react";
+import cl from "./Wallet.module.scss";
+import money from "../../assets/icons/coin.png";
 
-const Wallet = (setBalance) => {
-  const [walletBalance, setWalletBalance] = useState(2500)
+const Wallet = ({
+  walletBalance,
+  setWalletBalance,
+  setBalance,
+  setOpenModal,
+}) => {
+  function setMoney(bill) {
+    if (walletBalance >= bill) {
+      setWalletBalance((prev) => prev - bill);
+      setBalance((prev) => prev + bill);
+    }
+  }
   return (
     <div className={cl.Wallet}>
       <div className={cl.Wallet_title}>
-             <h1>Ваш кошелёк: {walletBalance}</h1>
+        <h1>
+          <img src={money} alt="money" /> Ваш баланс: {walletBalance} ₽
+        </h1>
       </div>
-      <div className={cl.Wallet_bill}>
-        <img src={money} alt="money" />
-        <button type='button' onClick={() => setBalance(prev => prev + 100)}>100</button>
-      </div>
-        
-    </div>
-  )
-}
+      <p>Выберите купюру</p>
+      <div className={cl.Wallet_buttons}>
+        <button type="button" onClick={() => setMoney(50)}>
+          50 ₽
+        </button>
 
-export default Wallet
+        <button type="button" onClick={() => setMoney(100)}>
+          100 ₽
+        </button>
+
+        <button type="button" onClick={() => setMoney(500)}>
+          500 ₽
+        </button>
+
+        <button type="button" onClick={() => setMoney(1000)}>
+          1000 ₽
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Wallet;

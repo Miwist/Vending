@@ -42,7 +42,7 @@ export let items = [{
 },{
     id: 7,
     img: shweps,
-    name: "shweps",
+    name: "schweppes",
     price: 80
 },{
     id: 8,
