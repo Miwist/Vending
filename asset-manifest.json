@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Vending/static/css/main.482194bb.css",
-    "main.js": "/Vending/static/js/main.f5a7320e.js",
+    "main.js": "/Vending/static/js/main.7f4f953c.js",
     "static/media/crisps1.png": "/Vending/static/media/crisps1.f9729a351b4f7fc052f1.png",
     "static/media/donut.png": "/Vending/static/media/donut.8a4dcb7d0538123b1830.png",
     "static/media/pepsi.png": "/Vending/static/media/pepsi.49f3d72e0684b480928e.png",
@@ -16,10 +16,10 @@
     "static/media/wallet.png": "/Vending/static/media/wallet.7a4549af8e46975fa38c.png",
     "index.html": "/Vending/index.html",
     "main.482194bb.css.map": "/Vending/static/css/main.482194bb.css.map",
-    "main.f5a7320e.js.map": "/Vending/static/js/main.f5a7320e.js.map"
+    "main.7f4f953c.js.map": "/Vending/static/js/main.7f4f953c.js.map"
   },
   "entrypoints": [
     "static/css/main.482194bb.css",
-    "static/js/main.f5a7320e.js"
+    "static/js/main.7f4f953c.js"
   ]
 }
