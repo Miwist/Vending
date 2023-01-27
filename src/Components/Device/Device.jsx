@@ -58,9 +58,9 @@ const Device = ({ setWalletBalance, balance, setBalance, thing }) => {
           remainder = remainder - nominalo * coin; // изменяем баланс на количество забранных купюр
           setBalance(remainder);
           setWalletBalance((prev) => prev + balance);
-        } else if (moneyChange[indexId].amount < coin) {
+        } else  {
           arr.pop();
-          if (arr.length <= 2) {
+          if (arr.length <= 1) {
             console.log("Сдачи нет, возьми шоколадку");
             remainder = 0;
             thing.push(items[0]); // даём товар, если нет сдачи
@@ -68,6 +68,11 @@ const Device = ({ setWalletBalance, balance, setBalance, thing }) => {
             setWalletBalance((prev) => prev + remainder);
           }
         }
+        if (i > 12) {
+          remainder = 0;
+          // подстраховка при зацикливании
+        }
+   
       }
     }
   }
