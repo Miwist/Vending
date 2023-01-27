@@ -75,6 +75,7 @@ const Device = ({ setWalletBalance, balance, setBalance, thing }) => {
         setBalance(remainder);
         setWalletBalance((prev) => prev + remainder);
       } else {
+        setCounter(1);
         setBalance(remainder);
         setWalletBalance((prev) => prev + balance);
       }
