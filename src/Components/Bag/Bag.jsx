@@ -8,7 +8,7 @@ const Bag = ({ thing, setOpenBag }) => {
       {thing.length > 0 ? (
         <div className={cl.Bag_items}>
           {thing.map((item) => (
-            <div className={cl.Bag__item} key={item.id}>
+            <div className={cl.Bag__item} key={Math.random()}>
               <img src={item.img} alt={item.name} />
               <p>{item.name}</p>
             </div>
