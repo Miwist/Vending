@@ -40,7 +40,7 @@ const Device = ({ setWalletBalance, balance, setBalance, thing }) => {
 
     if (remainder > 0) {
       let arr = []; // массив номинала для сдачи
-
+      let empty = false;
       moneyChange.forEach((item) => {
         if (item.nominal <= remainder && item.amount >= 2) {
           arr.push(item.nominal); // если номинал подходит для размена, то добавляем в массив
@@ -56,23 +56,27 @@ const Device = ({ setWalletBalance, balance, setBalance, thing }) => {
         if (moneyChange[indexId].amount > coin) {
           moneyChange[indexId].amount = moneyChange[indexId].amount - coin; // забираем купюры
           remainder = remainder - nominalo * coin; // изменяем баланс на количество забранных купюр
-          setBalance(remainder);
-          setWalletBalance((prev) => prev + balance);
-        } else  {
+        } else {
           arr.pop();
           if (arr.length <= 1) {
+            empty = true;
             console.log("Сдачи нет, возьми шоколадку");
             remainder = 0;
             thing.push(items[0]); // даём товар, если нет сдачи
-            setBalance(remainder);
-            setWalletBalance((prev) => prev + remainder);
           }
         }
         if (i > 12) {
           remainder = 0;
           // подстраховка при зацикливании
         }
-   
+      }
+      if (empty) {
+        setCounter(100);
+        setBalance(remainder);
+        setWalletBalance((prev) => prev + remainder);
+      } else {
+        setBalance(remainder);
+        setWalletBalance((prev) => prev + balance);
       }
     }
   }
@@ -135,6 +139,14 @@ const Device = ({ setWalletBalance, balance, setBalance, thing }) => {
                   !
                 </div>
                 <p style={{ color: "#FC002D" }}>Не хватает</p>
+              </div>
+            )}
+            {counter === 100 && (
+              <div className={cl.valid} style={{ background: "#F990A3", marginTop: "10px" }}>
+                <div className={cl.square} style={{ color: "#F990A3" }}>
+                  !
+                </div>
+                <p style={{ color: "#FC002D"}}>Нет сдачи</p>
               </div>
             )}
           </div>
