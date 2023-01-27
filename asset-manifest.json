@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Vending/static/css/main.8863c0b0.css",
+    "main.js": "/Vending/static/js/main.4ae9fde6.js",
+    "static/media/crisps1.png": "/Vending/static/media/crisps1.f9729a351b4f7fc052f1.png",
+    "static/media/donut.png": "/Vending/static/media/donut.8a4dcb7d0538123b1830.png",
+    "static/media/pepsi.png": "/Vending/static/media/pepsi.49f3d72e0684b480928e.png",
+    "static/media/empty.png": "/Vending/static/media/empty.5cc943d27eb3ed685271.png",
+    "static/media/sprite.png": "/Vending/static/media/sprite.01f6f4ddae25dac6f242.png",
+    "static/media/coin.png": "/Vending/static/media/coin.00a0c9cdec86048edd26.png",
+    "static/media/crisps.png": "/Vending/static/media/crisps.cea858ba2b5de7a91e2e.png",
+    "static/media/soda.png": "/Vending/static/media/soda.12c701a53bd1d86a4a56.png",
+    "static/media/shweps.png": "/Vending/static/media/shweps.2e241c148b2e2f0a2fc4.png",
+    "static/media/bag.png": "/Vending/static/media/bag.9c816c6b923ef947a58e.png",
+    "static/media/chocolate.png": "/Vending/static/media/chocolate.cd46f96ba5f00cfe6bd5.png",
+    "static/media/wallet.png": "/Vending/static/media/wallet.7a4549af8e46975fa38c.png",
+    "index.html": "/Vending/index.html",
+    "main.8863c0b0.css.map": "/Vending/static/css/main.8863c0b0.css.map",
+    "main.4ae9fde6.js.map": "/Vending/static/js/main.4ae9fde6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8863c0b0.css",
+    "static/js/main.4ae9fde6.js"
+  ]
+}
